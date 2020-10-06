@@ -13,6 +13,8 @@ every <%= %> is where something is being "injected" from routes/index.js-->
     <div>
       <% if (title == "Home") { %>
         <%- include partials/home_content.ejs %>
+      <% } else if (title == "About Me") { %>
+        <%- include partials/about_me_content.ejs %>
       <% } %>
     </div>
   </main>
