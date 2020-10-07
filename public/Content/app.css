@@ -2,7 +2,6 @@
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
-    width: 300px;
     display: inline-block;
   }
   
@@ -14,4 +13,8 @@ div.gallery {
 /*Add space at the bottom to be able to scroll down*/
 .container {
     padding-bottom: 60px;
+}
+
+.projects-description {
+  text-align:center;
 }
