@@ -15,6 +15,10 @@ every <%= %> is where something is being "injected" from routes/index.js-->
         <%- include partials/home_content.ejs %>
       <% } else if (title == "About Me") { %>
         <%- include partials/about_me_content.ejs %>
+      <% } else if (title == "Projects") { %>
+        <%- include partials/projects_content.ejs %>
+      <% } else if (title == "Services") { %>
+        <%- include partials/services_content.ejs %>
       <% } %>
     </div>
   </main>
