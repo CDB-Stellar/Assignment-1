@@ -1,5 +1,5 @@
-<!--This is essentially the html template used for EACH page. This whole site is a single-page application (SPA).
-every <%= %> is where something is being "injected" from routes/index.js-->
+<!-- index.ejs - Chloe Baker - 301062067 - October 8, 2020 -->
+<!-- This is essentially the html template used for each page of this SPA application. -->
 
 <%- include partials/header.ejs %>
 
@@ -11,6 +11,7 @@ every <%= %> is where something is being "injected" from routes/index.js-->
       <h1 class="display-4"><%= title %></h1>
     </div>
     <div>
+      <!-- Depending on the page title, show the correct content -->
       <% if (title == "Home") { %>
         <%- include partials/home_content.ejs %>
       <% } else if (title == "About Me") { %>

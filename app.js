@@ -1,3 +1,5 @@
+/* app.js - Chloe Baker - 301062067 - October 8, 2020 */
+
 //This is the main manifest file.
 //Installed third-party packages here
 let createError = require('http-errors');

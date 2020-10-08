@@ -1,25 +1,27 @@
+<!-- main_nav.ejs - Chloe Baker - 301062067 - October 8, 2020 -->
+
 <!-- Main Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark"><!-- this can be changed to navbar-light/bg-light or navbar-dark/bg-dark -->
-    <a class="navbar-brand" href="/"><img src="/Assets/images/logo.png" alt="logo" width="50" height="50"> Portfolio</a><!-- this brand itself can be a nav, "/" is the home page -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><img src="/Assets/images/logo.png" alt="logo" width="50" height="50"> Portfolio</a>
     
+    <!-- "hamburger" -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- ^ this button is the "hamburger", if on mobile or small screen you get this condensed menu. (Try making the browser window small to see) -->
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto"> <!-- mr-auto makes the nav go on the left, ml-auto makes it go on the right -->
+      <ul class="navbar-nav mr-auto"> <!-- mr-auto makes the nav go on the left -->
         
-        <!-- Using ejs to set the right nav icons to active as necessary -->
+        <!-- Using ejs to set the correct nav icons to active as necessary -->
         <% if (title == "Home") { %>
         <li class="nav-item active">
         <% } else { %>
         <li class="nav-item">
         <% } %>
-          <a class="nav-link" href="/home"><i class="fas fa-lg fa-user-graduate"></i> Home </a><!-- this uses the fontawesome class for an icon "fa-lg" is optional, it makes the icon larger -->
-        </li> <!-- this is the home link, /home is the route -->
+          <a class="nav-link" href="/home"><i class="fas fa-lg fa-user-graduate"></i> Home </a>
+        </li>
         
-        <!-- all the links below are the next navigation links -->
+        <!-- About Me link -->
         <% if (title == "About Me") { %>
         <li class="nav-item active">
         <% } else { %>
@@ -28,6 +30,7 @@
           <a class="nav-link" href="/about"><i class="fas fa-lg fa-address-card"></i> About Me </a>
         </li>
         
+        <!-- Projects link -->
         <% if (title == "Projects") { %>
         <li class="nav-item active">
         <% } else { %>
@@ -36,6 +39,7 @@
           <a class="nav-link" href="/projects"><i class="fas fa-lg fa-archive"></i> Projects </a>
         </li>
         
+        <!-- Services link -->
         <% if (title == "Services") { %>
         <li class="nav-item active">
         <% } else { %>
@@ -44,6 +48,7 @@
           <a class="nav-link" href="/services"><i class="fas fa-lg fa-laptop-code"></i> Services </a>
         </li>
         
+        <!-- Contact Me link -->
         <% if (title == "Contact Me") { %>
         <li class="nav-item active">
         <% } else { %>

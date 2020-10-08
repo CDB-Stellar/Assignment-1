@@ -1,4 +1,6 @@
-/*Project image gallery*/
+/* app.css - Chloe Baker - 301062067 - October 8, 2020 */
+
+/* Project 2 & 3 - image gallery */
 div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
@@ -10,11 +12,18 @@ div.gallery {
     height: auto;
   }
 
-/*Add space at the bottom to be able to scroll down*/
+/* Add space at the bottom to be able to scroll down comfortably */
 .container {
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 }
 
+/* Change colour and center text on jumbotron */
+.jumbotron {
+  text-align: center;
+  background-color: #edeefc;
+}
+
+/* Center the text on the projects page */
 .projects-description {
   text-align:center;
 }

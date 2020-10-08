@@ -1,3 +1,5 @@
+/* contactForm.js - Chloe Baker - 301062067 - October 8, 2020 */
+
 //Called when the form submit button is clicked
 function getFormInfo() {
     //Get the form information
