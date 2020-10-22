@@ -1,3 +1,4 @@
+/* models/user.js - Chloe Baker - 301062067 - October 22, 2020 */
 // require modules for user model
 // you need a user model to be able to authenticate
 let mongoose = require('mongoose')
