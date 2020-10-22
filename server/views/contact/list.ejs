@@ -12,12 +12,15 @@
         <div class="col-md-offset-1 col-md-10">
             <h1><%= title %></h1>
 
+            <!-- Add button -->
             <% if (typeof displayName == 'string' && displayName) { %> <!--if the user is logged in show add button-->
             <a href="/contacts-list/add" class="btn btn-primary" role="button">
             <i class="fas fa-plus-circle"></i> Add a Contact </a>
             <% } %>
             <br/>
-            <table class="table table-bordered table-striped table-hover"> <!--bootstrap template-->
+
+            <!-- Table -->
+            <table class="table table-bordered table-striped table-hover" id="toSort"> <!--id is for sortTable()-->
                 <!--Header Row-->
                 <tr class="d-flex"> <!--All the col-numbers must add to 12-->
                     <% if (typeof displayName == 'string' && displayName) { %> <!--user is logged in-->
@@ -36,13 +39,13 @@
                 <!--Repeatable template row-->
                 <% for (let count = 0; count < ContactList.length; count++) { %>
                     <tr class="d-flex">
-                        <% if (typeof displayName == 'string' && displayName) { %> <!--user is logged in - show edit/delete buttons-->
-                            <td class="text-center col-2"><%= ContactList[count].name %></td>
+                        <% if (typeof displayName == 'string' && displayName) { %> <!--user is logged in - show update/delete buttons-->
+                            <td id="sortName" class="text-center col-2"><%= ContactList[count].name %></td>
                             <td class="text-center col-3"><%= ContactList[count].number %></td>
                             <td class="text-center col-3"><%= ContactList[count].email %></td>
                             <td class="text-center col-2">
                                 <a href="/contacts-list/edit/<%= ContactList[count]._id%>" class="btn btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt"></i> Edit </a>
+                                <i class="fas fa-pencil-alt"></i> Update </a>
                             </td>
                             <td class="text-center col-2">
                                 <a href="/contacts-list/delete/<%= ContactList[count]._id%>" class="btn btn-danger btn-sm">

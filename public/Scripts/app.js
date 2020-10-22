@@ -22,3 +22,35 @@
     
     window.addEventListener("load", Start); //when the window finishes loading it will call the Start function
 })();
+
+// Sort the table showing the business_contacts database files
+function sortTable() 
+{
+    let table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("toSort");
+    switching = true;
+    // Continues until no switch occurs
+    while (switching) 
+    {
+        switching = false; // no switching done yet
+        rows = table.rows;
+        // Loop through tr (except headers)
+        for (i = 1; i < (rows.length - 1); i++) 
+        {
+            shouldSwitch = false; //assume you shouldn't switch
+            x = rows[i].getElementsByTagName("TD")[0]; // get the first row to compare
+            y = rows[i + 1].getElementsByTagName("TD")[0]; // get the second row to compare
+            // Check if switching should be done
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) 
+            {
+                shouldSwitch = true;
+                break;
+            }
+        }
+        if (shouldSwitch) 
+        {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]); // make switch
+            switching = true; // did switch
+        }
+    }
+}

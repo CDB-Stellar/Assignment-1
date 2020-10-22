@@ -62,7 +62,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('contact/edit', {title: 'Edit Contact', contact: contactToEdit, 
+            res.render('contact/edit', {title: 'Update Contact', contact: contactToEdit, 
             displayName: req.user ? req.user.displayName : ''});
         }
     });
