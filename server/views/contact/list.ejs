@@ -1,0 +1,65 @@
+<!-- list.ejs - Chloe Baker - 301062067 - October 22, 2020 -->
+<!-- Show business_contacts database content on this page in a table -->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+  <!-- Display the business_contacts database content -->
+  <main class="container">
+    <!-- Make a table to view db info -->
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <h1><%= title %></h1>
+
+            <% if (typeof displayName == 'string' && displayName) { %> <!--if the user is logged in show add button-->
+            <a href="/contacts-list/add" class="btn btn-primary" role="button">
+            <i class="fas fa-plus-circle"></i> Add a Contact </a>
+            <% } %>
+            <br/>
+            <table class="table table-bordered table-striped table-hover"> <!--bootstrap template-->
+                <!--Header Row-->
+                <tr class="d-flex"> <!--All the col-numbers must add to 12-->
+                    <% if (typeof displayName == 'string' && displayName) { %> <!--user is logged in-->
+                        <th class="text-center col-2">Name</th>
+                        <th class="text-center col-3">Phone Number</th>
+                        <th class="text-center col-3">Email</th>
+                        <th class="text-center col-2"></th>
+                        <th class="text-center col-2"></th>
+                    <% } else { %> <!--user is not logged in-->
+                        <th class="text-center col-4">Name</th>
+                        <th class="text-center col-4">Phone Number</th>
+                        <th class="text-center col-4">Email</th>
+                    <% } %>
+                </tr>
+
+                <!--Repeatable template row-->
+                <% for (let count = 0; count < ContactList.length; count++) { %>
+                    <tr class="d-flex">
+                        <% if (typeof displayName == 'string' && displayName) { %> <!--user is logged in - show edit/delete buttons-->
+                            <td class="text-center col-2"><%= ContactList[count].name %></td>
+                            <td class="text-center col-3"><%= ContactList[count].number %></td>
+                            <td class="text-center col-3"><%= ContactList[count].email %></td>
+                            <td class="text-center col-2">
+                                <a href="/contacts-list/edit/<%= ContactList[count]._id%>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i> Edit </a>
+                            </td>
+                            <td class="text-center col-2">
+                                <a href="/contacts-list/delete/<%= ContactList[count]._id%>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete </a>
+                            </td>
+                        <% } else { %> <!--user is not logged in-->
+                            <td class="text-center col-4"><%= ContactList[count].name %></td>
+                            <td class="text-center col-4"><%= ContactList[count].number %></td>
+                            <td class="text-center col-4"><%= ContactList[count].email %></td>
+                        <% } %>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>

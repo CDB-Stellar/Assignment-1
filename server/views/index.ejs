@@ -1,0 +1,31 @@
+<!-- index.ejs - Chloe Baker - 301062067 - October 22, 2020 -->
+<!-- This is essentially the html template used for each page of this SPA application. -->
+
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+
+  <!-- Main Content -->
+  <main class="container"> <!--container class keeps it from hitting the edges-->
+    <div class="jumbotron">
+      <h1 class="display-4"><%= title %></h1>
+    </div>
+    <div>
+      <!-- Depending on the page title, show the correct content -->
+      <% if (title == "Home") { %>
+        <%- include partials/home_content.ejs %>
+      <% } else if (title == "About Me") { %>
+        <%- include partials/about_me_content.ejs %>
+      <% } else if (title == "Projects") { %>
+        <%- include partials/projects_content.ejs %>
+      <% } else if (title == "Services") { %>
+        <%- include partials/services_content.ejs %>
+      <% } else if (title == "Contact Me") { %>
+        <%- include partials/contact_content.ejs %>
+      <% } %>
+    </div>
+  </main>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>

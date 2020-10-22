@@ -1,0 +1,41 @@
+<!-- contact_content.ejs - Chloe Baker - 301062067 - October 22, 2020 -->
+
+<!--Display my contact information-->
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        My Contact Information
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Email: chloe_baker@live.com</li>
+      <li class="list-group-item">Phone: (647) - 588 - 0463</li>
+    </ul>
+</div>
+<br/>
+<br/>
+
+<!--Provide form for someone to contact me-->
+<h3>Want to contact me?</h3>
+<br/>
+<form id="contactForm" action="/home">
+    <div class="form-group">
+        <label for="inputFName">First Name</label>
+        <input type="text" class="form-control" id="inputFName" placeholder="First Name" name="fName">
+    </div>
+    <div class="form-group">
+        <label for="inputLName">Last Name</label>
+        <input type="text" class="form-control" id="inputLName" placeholder="Last Name" name="lName">
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Your Email</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" name="email">
+    </div>
+    <div class="form-group">
+        <label for="inputPhone">Your Phone</label>
+        <input type="tel" class="form-control" id="inputPhone" placeholder="(555)-555-5555" name="phone">
+      </div>
+    <div class="form-group">
+      <label for="inputTextArea">Message</label>
+      <textarea class="form-control" id="inputTextArea" rows="3" name="message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="getFormInfo()" value="Submit">Send</button>
+</form>
