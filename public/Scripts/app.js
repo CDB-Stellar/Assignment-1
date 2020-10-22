@@ -26,14 +26,14 @@
 // Sort the table showing the business_contacts database files
 function sortTable() 
 {
-    let table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("toSort");
+    let table, rows, switching, i, x, y, shouldSwitch; // declare variables
+    table = document.getElementById("toSort"); // find the table
     switching = true;
     // Continues until no switch occurs
     while (switching) 
     {
         switching = false; // no switching done yet
-        rows = table.rows;
+        rows = table.rows; // list of rows
         // Loop through tr (except headers)
         for (i = 1; i < (rows.length - 1); i++) 
         {
